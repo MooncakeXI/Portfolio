@@ -90,6 +90,17 @@ export function Experience() {
                     </li>
                   ))}
                 </ul>
+
+                <p className="mb-2 mt-6 font-mono text-xs text-muted-foreground">
+                  Skills I learned:
+                </p>
+                <ul className="flex flex-wrap gap-2 font-mono text-[10px] text-muted-foreground">
+                  {exp.skillsLearned.map((skill) => (
+                    <li key={skill} className="rounded-full bg-secondary px-2.5 py-1">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

@@ -6,7 +6,6 @@ export interface SocialLink {
 
 export interface Skill {
   name: string;
-  level: number;
 }
 
 export interface EducationItem {
@@ -22,6 +21,7 @@ export interface ExperienceItem {
   role: string;
   period: string;
   points: string[];
+  skillsLearned: string[];
 }
 
 export interface ProjectItem {
@@ -36,42 +36,49 @@ export interface ProjectItem {
 export const personalInfo = {
   name: "Suvijak Phuphakdeepan",
   logoText: "<dev />",
-  title: "Software Developer",
+  title: "Software Engineer",
   roles: [
     "software engineer.",
     "full-stack developer.",
-    "open-source contributor.",
+    "data pipeline builder.",
     "problem solver.",
   ],
   bioShort:
-    "I specialize in building exceptional digital experiences. Currently focused on crafting accessible, performant, and beautifully designed applications.",
+    "Proactive Computer Engineering student with hands-on experience in full-stack web development, building document-processing pipelines, and designing scalable APIs.",
   aboutParagraphs: [
-    "Hello! I'm John, a software developer who loves building things that live on the internet. My interest in web development started back in 2016 when I decided to try editing custom Tumblr themes -- turns out hacking together a custom reblog button taught me a lot about HTML and CSS!",
-    "Fast-forward to today, and I've had the privilege of working at a start-up, a large corporation, and a digital agency. My main focus these days is building accessible, inclusive products and digital experiences.",
+    "Hello! I'm Suvijak, a Computer Engineering and Digital Technology student at Chulalongkorn University. I have a strong problem-solving mindset and a passion for learning modern technologies, cloud platforms, and AI integrations to deliver impactful software solutions.",
+    "Recently, I worked as a Software Engineer at PorTCAS where I built document-processing pipelines using the Gemini API. Prior to that, I interned at Index Living Mall developing full-stack web applications for large-scale clearance events.",
   ],
-  avatarInitials: "JD",
-  email: "suvijak237@gmail.com",
+  avatarInitials: "SP",
+  email: "6733280721@student.chula.ac.th",
   socialLinks: [
     {
       label: "GitHub",
       href: "https://github.com/MooncakeXI",
       platform: "github",
     },
-    { label: "LinkedIn", href: "https://linkedin.com", platform: "linkedin" },
-    { label: "Twitter", href: "https://twitter.com", platform: "twitter" },
-    { label: "Email", href: "mailto:suvijak237@gmail.com", platform: "email" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/suvijak-phuphakdeepan/",
+      platform: "linkedin",
+    },
+    {
+      label: "Email",
+      href: "mailto:6733280721@student.chula.ac.th",
+      platform: "email",
+    },
   ] as SocialLink[],
 };
 
 export const skills: Skill[] = [
-  { name: "TypeScript", level: 92 },
-  { name: "React / Next.js", level: 95 },
-  { name: "Node.js", level: 88 },
-  { name: "Python", level: 80 },
-  { name: "PostgreSQL", level: 85 },
-  { name: "Docker / K8s", level: 75 },
-  { name: "Tailwind CSS", level: 93 },
-  { name: "GraphQL", level: 78 },
+  { name: "TypeScript (Node.js)" },
+  { name: "Python" },
+  { name: "SQL" },
+  { name: "React" },
+  { name: "Express.js" },
+  { name: "Prompt Engineering" },
+  { name: "ML Pipelines (Airflow)" },
+  { name: "Docker & Firebase" },
 ];
 
 export const education: EducationItem[] = [
@@ -79,103 +86,104 @@ export const education: EducationItem[] = [
     school: "Chulalongkorn University",
     degree: "Bachelor of Engineering",
     major: "Computer Engineering and Digital Technology",
-    period: "2024 - Present",
-    details: "Focused on Distributed Systems and Software Architecture.",
+    period: "Aug 2024 - Present",
+    details: "GPAX: 3.41",
   },
   {
     school: "Suratpittaya School",
     degree: "High School Diploma",
-    major: "Science Technology Environment and Mathematics",
+    major: "Science Mathematics Technology and Environment (SMTE)",
     period: "2021 - 2023",
-    details: "Science and Mathematics Intensive Program.",
+    details: "GPAX: 3.70",
+  },
+  {
+    school: "Suratpittaya School",
+    degree: "Junior High School Diploma",
+    major: "Enriched Science and Technology (EST)",
+    period: "2018 - 2020",
+    details: "GPAX: 3.47",
   },
 ];
 
 export const experiences: ExperienceItem[] = [
   {
-    company: "Acme Corp",
-    role: "Senior Software Engineer",
-    period: "Jan 2024 - Present",
+    company: "PorTCAS",
+    role: "Software Engineer",
+    period: "May 2026 - Jul 2026",
     points: [
-      "Led the migration of a legacy monolith to a microservices architecture, reducing deployment times by 70%.",
-      "Architected and built the company's new design system used across 8 product teams.",
-      "Mentored 4 junior developers through code reviews, pair programming, and technical workshops.",
+      "Prototyped how far Google Drive and Gemini could push the platform past a typical web app, turning the proof-of-concepts that worked into real integrations.",
+      "Built a document pipeline that reads transcripts, portfolios, and pitch decks up to 30 pages long and turns them into structured data with the Gemini API, with retries and timeouts built in so it doesn't fall over in production.",
+      "Designed a token-based credit system from scratch, schema through 4 API endpoints, to keep usage of the platform's AI features fair and trackable.",
+    ],
+    skillsLearned: [
+      "Gemini API",
+      "Google Drive API",
+      "Node.js",
+      "Credit System Design",
+      "Retry/Timeout Handling",
     ],
   },
   {
-    company: "TechStart Inc",
+    company: "Index Living Mall",
     role: "Full Stack Developer",
-    period: "Mar 2022 - Dec 2023",
+    period: "May 2025 - Jul 2025",
     points: [
-      "Built and shipped a real-time analytics dashboard processing 1M+ events daily.",
-      "Implemented CI/CD pipelines that reduced release cycle from 2 weeks to same-day.",
-      "Collaborated with design team to improve conversion rates by 35% through A/B testing.",
+      "Shipped 'DC Clearance,' a web app built for Index Living Mall's biannual clearance sales, events that draw 60,000-100,000 shoppers through 6,000+ SKUs.",
+      "Built out 11 REST endpoints covering everything from product listings and pricing/discount rules to wishlists and order history.",
+      "Traced slow queries back to the ORM and rewrote the hot paths as hand-written SQL joins, keeping things fast as the catalog kept growing.",
+      "Designed the UI mobile-first from day one, since most shoppers were browsing the clearance floor from their phones.",
+      "Sat down with warehouse and sales staff directly and shipped feature changes mid-event based on what they actually needed on the floor.",
     ],
-  },
-  {
-    company: "Digital Agency",
-    role: "Frontend Developer",
-    period: "Jun 2020 - Feb 2022",
-    points: [
-      "Developed responsive, accessible websites for 15+ clients across healthcare, fintech, and e-commerce.",
-      "Introduced component-based architecture that reduced development time for new projects by 40%.",
-      "Conducted accessibility audits ensuring WCAG 2.1 AA compliance for all deliverables.",
+    skillsLearned: [
+      "REST API Design",
+      "SQL Optimization",
+      "Mobile-First UI",
+      "Stakeholder Collaboration",
+      "React",
     ],
   },
 ];
 
 export const featuredProjects: ProjectItem[] = [
   {
-    title: "Cloud Dashboard",
+    title: "End-to-End ML Pipeline: AI-Powered Condo Happiness Scoring",
     description:
-      "A comprehensive cloud infrastructure dashboard that provides real-time monitoring, cost analytics, and resource management. Built with performance and accessibility in mind.",
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Developed an Airflow pipeline processing 180,000+ urban complaint records and 2,000+ condo listings to train an ML model generating location-based happiness scores. Built interactive dashboards visualizing prices, risks, and happiness metrics across all 50 Bangkok districts.",
+    tech: ["Python", "Airflow", "Machine Learning", "Data Visualization"],
+    github: "https://github.com/MooncakeXI",
+    live: "",
     color: "from-primary/5 to-primary/15",
   },
   {
-    title: "DevSync",
+    title: "Software Design & IoT: Smart Farming System for Urban Residents",
     description:
-      "A real-time collaborative code editor with built-in version control, live cursors, and instant deployment. Supports 30+ programming languages.",
-    tech: ["Next.js", "WebSockets", "Redis", "Docker"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Architected the embedded hardware system and built real-time pipelines streaming data from 6 sensor nodes every 5 seconds into Firebase, with automated LINE alerts. Led cross-functional integration connecting hardware seamlessly with the web app.",
+    tech: [
+      "IoT / Embedded Systems",
+      "Firebase",
+      "Real-time Data",
+      "System Integration",
+    ],
+    github: "https://github.com/MooncakeXI",
+    live: "",
     color: "from-primary/10 to-transparent",
-  },
-  {
-    title: "Flux API",
-    description:
-      "A high-performance REST API framework with automatic documentation generation, rate limiting, and built-in authentication. Handles 10k+ requests per second.",
-    tech: ["Go", "gRPC", "PostgreSQL", "Kubernetes"],
-    github: "https://github.com",
-    live: "https://example.com",
-    color: "from-transparent to-primary/8",
   },
 ];
 
 export const otherProjects: ProjectItem[] = [
+  // หากมีโปรเจกต์อื่นๆ เพิ่มเติมสามารถใส่เพิ่มในส่วนนี้ได้ครับ
   {
-    title: "CLI Task Manager",
+    title: "Smart Farm IoT",
     description:
-      "A minimal command-line task manager with local storage, tagging, and priority sorting.",
-    tech: ["Rust", "SQLite"],
-    github: "https://github.com",
+      "An automated agricultural monitoring system that integrates hardware sensors with a real-time cloud database.",
+    tech: ["ESP32", "Firebase", "IoT"],
+    github: "https://github.com/MooncakeXI",
   },
   {
-    title: "Portfolio Generator",
+    title: "DC Clearance Web App",
     description:
-      "An open-source portfolio site generator that converts Markdown content to a polished site.",
-    tech: ["Next.js", "MDX", "Tailwind"],
-    github: "https://github.com",
-    live: "https://example.com",
-  },
-  {
-    title: "Pixel Art Editor",
-    description:
-      "A browser-based pixel art editor with layers, animation timelines, and export to GIF/PNG.",
-    tech: ["Canvas API", "React", "TypeScript"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "A corporate internal tool for managing and browsing discounted inventory with optimized database queries.",
+    tech: ["React", "Node.js", "MySQL"],
+    github: "https://github.com/MooncakeXI",
   },
 ];
