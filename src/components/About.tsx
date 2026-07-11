@@ -72,25 +72,17 @@ export function About() {
               Here are a few technologies I've been working with recently:
             </p>
 
-            {/* Animated skill bars */}
-            <div className="reveal reveal-delay-3 grid gap-3 pt-4">
-              {skills.map((skill, i) => (
-                <div key={skill.name} className="group flex items-center gap-4">
-                  <span className="w-32 shrink-0 font-mono text-xs text-muted-foreground">
-                    {skill.name}
+            {/* Tech badges */}
+            <div className="reveal reveal-delay-3 flex flex-wrap gap-2.5 pt-4">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="group relative flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 font-mono text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/5 hover:text-primary hover:shadow-sm"
+                >
+                  <span className="text-[10px] text-primary transition-transform duration-300 group-hover:translate-x-0.5">
+                    ▹
                   </span>
-                  <div className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-border">
-                    <div
-                      className="absolute inset-y-0 left-0 rounded-full bg-primary transition-all duration-1000 ease-out"
-                      style={{
-                        width: `${skill.level}%`,
-                        transitionDelay: `${i * 80 + 400}ms`,
-                      }}
-                    />
-                  </div>
-                  <span className="w-8 text-right font-mono text-[10px] text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    {skill.level}%
-                  </span>
+                  <span>{skill.name}</span>
                 </div>
               ))}
             </div>
