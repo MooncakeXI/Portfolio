@@ -32,7 +32,7 @@ export function Education() {
               </div>
 
               {/* Card Container */}
-              <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
+              <div className="glow-surface relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
                 {/* Subtle top primary gradient border on card hover */}
                 <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/40 via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 

@@ -1,5 +1,4 @@
 import { ExternalLink, Github, Folder } from "lucide-react";
-import { useRef, useCallback } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { SectionHeading } from "./section-heading";
 import { featuredProjects, otherProjects } from "@/data/portfolio";
@@ -11,32 +10,10 @@ function ProjectCard({
   project: (typeof otherProjects)[0];
   index: number;
 }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const el = cardRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    el.style.setProperty("--mouse-x", `${x * 100}%`);
-    el.style.setProperty("--mouse-y", `${y * 100}%`);
-  }, []);
-
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      className={`reveal reveal-delay-${index + 1} group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/20`}
+      className={`reveal reveal-delay-${index + 1} glow-surface group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/20`}
     >
-      {/* Radial hover glow */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          background:
-            "radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), oklch(0.52 0.14 175 / 0.06), transparent 60%)",
-        }}
-      />
 
       <div className="relative">
         <div className="mb-6 flex items-center justify-between">
@@ -107,7 +84,7 @@ export function Projects() {
             >
               {/* Project visual */}
               <div className="flex-1">
-                <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/20">
+                <div className="glow-surface relative rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/20">
                   <div
                     className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.color || "from-primary/5 to-primary/15"}`}
                   >
