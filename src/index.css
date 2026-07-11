@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* แปลงค่า oklch มาเป็นระบบที่ใช้ง่ายใน v3 */
-    --background: 0 0% 100%;
+    --background: 40 33% 97%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -54,12 +54,57 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
 
 /* คลาสเพิ่มเติมสำหรับ Hero และ Navbar */
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-zinc-500;
+}
+
+/* Global mouse-glow: ambient background + per-component reactive surfaces */
+:root {
+  --mx: 50%;
+  --my: 50%;
+}
+
+.mouse-glow-bg {
+  background: radial-gradient(
+    600px circle at var(--mx) var(--my),
+    oklch(0.52 0.14 175 / 0.1),
+    transparent 70%
+  );
+}
+html.mouse-glow-active .mouse-glow-bg {
+  opacity: 1;
+}
+
+.glow-surface {
+  position: relative;
+  overflow: hidden;
+}
+.glow-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(
+    900px circle at var(--lx, 50%) var(--ly, 50%),
+    oklch(0.52 0.14 175 / 0.16),
+    transparent 70%
+  );
+  transition: opacity 0.3s ease;
+}
+html.mouse-glow-active .glow-surface::before {
+  opacity: 1;
 }

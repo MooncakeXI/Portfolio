@@ -32,20 +32,24 @@ function useTypewriter(
     if (words.length === 0) return;
     const currentWord = words[wordIndex];
 
+    if (!isDeleting && text === currentWord) {
+      const pause = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(pause);
+    }
+
+    if (isDeleting && text === "") {
+      setIsDeleting(false);
+      setWordIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+
     const timeout = setTimeout(
       () => {
-        if (!isDeleting) {
-          setText(currentWord.slice(0, text.length + 1));
-          if (text.length + 1 === currentWord.length) {
-            setTimeout(() => setIsDeleting(true), pauseTime);
-          }
-        } else {
-          setText(currentWord.slice(0, text.length - 1));
-          if (text.length === 0) {
-            setIsDeleting(false);
-            setWordIndex((prev) => (prev + 1) % words.length);
-          }
-        }
+        setText(
+          isDeleting
+            ? currentWord.slice(0, text.length - 1)
+            : currentWord.slice(0, text.length + 1),
+        );
       },
       isDeleting ? deletingSpeed : typingSpeed,
     );
