@@ -53,14 +53,22 @@ export function Projects() {
             >
               {/* Project visual */}
               <div className="flex-1">
-                <div className="glow-surface relative rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/20">
-                  <div
-                    className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.color || "from-primary/5 to-primary/15"}`}
-                  >
-                    <span className="font-mono text-6xl font-black text-primary/15 transition-all duration-500 group-hover:text-primary/30 group-hover:scale-110">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
+                <div className="glow-surface relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/20">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.color || "from-primary/5 to-primary/15"}`}
+                    >
+                      <span className="font-mono text-6xl font-black text-primary/15 transition-all duration-500 group-hover:text-primary/30 group-hover:scale-110">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
 

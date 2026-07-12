@@ -1,3 +1,6 @@
+import condoMlPipelineImg from "@/assets/condo-ml-pipeline.png";
+import smartFarmIotImg from "@/assets/smart-farm-iot.png";
+
 export interface SocialLink {
   label: string;
   href: string;
@@ -31,6 +34,7 @@ export interface ProjectItem {
   github?: string;
   live?: string;
   color?: string; // Optional gradient classes for featured visuals
+  image?: string;
 }
 
 export interface CertificateItem {
@@ -164,9 +168,10 @@ export const featuredProjects: ProjectItem[] = [
     description:
       "Developed an Airflow pipeline processing 180,000+ urban complaint records and 2,000+ condo listings to train an ML model generating location-based happiness scores. Built interactive dashboards visualizing prices, risks, and happiness metrics across all 50 Bangkok districts.",
     tech: ["Python", "Airflow", "Machine Learning", "Data Visualization"],
-    github: "https://github.com/MooncakeXI",
+    github: "https://github.com/ApiwitJoey/DSDE_SING_WATER_2025",
     live: "",
     color: "from-primary/5 to-primary/15",
+    image: condoMlPipelineImg,
   },
   {
     title: "Software Design & IoT: Smart Farming System for Urban Residents",
@@ -178,9 +183,9 @@ export const featuredProjects: ProjectItem[] = [
       "Real-time Data",
       "System Integration",
     ],
-    github: "https://github.com/MooncakeXI",
     live: "",
     color: "from-primary/10 to-transparent",
+    image: smartFarmIotImg,
   },
 ];
 
