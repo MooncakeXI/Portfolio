@@ -12,10 +12,12 @@ function CertificateCard({
 }) {
   return (
     <div
-      className={`reveal reveal-delay-${index + 1} glow-surface group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/20`}
+      className={`reveal reveal-delay-${index + 1} glow-surface group relative flex flex-col rounded-lg border border-border/60 bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30`}
     >
       <div className="relative">
-        <Award className="mb-6 h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]" />
+        <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+          <Award className="h-5 w-5 text-primary" />
+        </div>
         <h4 className="mb-1 font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">
           {certificate.title}
         </h4>
@@ -53,7 +55,7 @@ export function Projects() {
             >
               {/* Project visual */}
               <div className="flex-1">
-                <div className="glow-surface relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:border-primary/20">
+                <div className="glow-surface relative overflow-hidden rounded-[1.75rem] bg-card shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
                   {project.image ? (
                     <img
                       src={project.image}

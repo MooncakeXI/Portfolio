@@ -30,8 +30,8 @@ function TiltAvatar() {
       onMouseLeave={handleMouseLeave}
       className="relative mx-auto w-full max-w-[280px] transition-transform duration-200 ease-out"
     >
-      <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border-2 border-primary/30 transition-all duration-300 group-hover:-bottom-2 group-hover:-right-2" />
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+      <div className="absolute -bottom-3 -right-3 h-full w-full rounded-[2rem] border-2 border-primary/30 transition-all duration-300 group-hover:-bottom-2 group-hover:-right-2" />
+      <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-lg">
         <img
           src={profileImg}
           alt={personalInfo.name}
