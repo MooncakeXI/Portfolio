@@ -1,3 +1,6 @@
+import condoMlPipelineImg from "@/assets/condo-ml-pipeline.png";
+import smartFarmIotImg from "@/assets/smart-farm-iot.png";
+
 export interface SocialLink {
   label: string;
   href: string;
@@ -31,6 +34,14 @@ export interface ProjectItem {
   github?: string;
   live?: string;
   color?: string; // Optional gradient classes for featured visuals
+  image?: string;
+}
+
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  period: string;
+  description?: string;
 }
 
 export const personalInfo = {
@@ -44,12 +55,11 @@ export const personalInfo = {
     "problem solver.",
   ],
   bioShort:
-    "Proactive Computer Engineering student with hands-on experience in full-stack web development, building document-processing pipelines, and designing scalable APIs.",
+    "Proactive Computer Engineering student with hands-on experience in full-stack web development and a strong interest in AI-powered systems.",
   aboutParagraphs: [
     "Hello! I'm Suvijak, a Computer Engineering and Digital Technology student at Chulalongkorn University. I have a strong problem-solving mindset and a passion for learning modern technologies, cloud platforms, and AI integrations to deliver impactful software solutions.",
     "Recently, I worked as a Software Engineer at PorTCAS where I built document-processing pipelines using the Gemini API. Prior to that, I interned at Index Living Mall developing full-stack web applications for large-scale clearance events.",
   ],
-  avatarInitials: "SP",
   email: "6733280721@student.chula.ac.th",
   socialLinks: [
     {
@@ -71,14 +81,21 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: "TypeScript (Node.js)" },
   { name: "Python" },
-  { name: "SQL" },
+  { name: "TypeScript" },
+  { name: "JavaScript" },
   { name: "React" },
+  { name: "Node.js" },
   { name: "Express.js" },
-  { name: "Prompt Engineering" },
-  { name: "ML Pipelines (Airflow)" },
-  { name: "Docker & Firebase" },
+  { name: "REST API Design" },
+  { name: "SQL" },
+  { name: "PostgreSQL" },
+  { name: "MongoDB" },
+  { name: "Machine Learning" },
+  { name: "Firebase" },
+  { name: "Docker" },
+  { name: "Postman" },
+  { name: "Git" },
 ];
 
 export const education: EducationItem[] = [
@@ -150,9 +167,10 @@ export const featuredProjects: ProjectItem[] = [
     description:
       "Developed an Airflow pipeline processing 180,000+ urban complaint records and 2,000+ condo listings to train an ML model generating location-based happiness scores. Built interactive dashboards visualizing prices, risks, and happiness metrics across all 50 Bangkok districts.",
     tech: ["Python", "Airflow", "Machine Learning", "Data Visualization"],
-    github: "https://github.com/MooncakeXI",
+    github: "https://github.com/ApiwitJoey/DSDE_SING_WATER_2025",
     live: "",
     color: "from-primary/5 to-primary/15",
+    image: condoMlPipelineImg,
   },
   {
     title: "Software Design & IoT: Smart Farming System for Urban Residents",
@@ -164,26 +182,51 @@ export const featuredProjects: ProjectItem[] = [
       "Real-time Data",
       "System Integration",
     ],
-    github: "https://github.com/MooncakeXI",
     live: "",
     color: "from-primary/10 to-transparent",
+    image: smartFarmIotImg,
   },
 ];
 
-export const otherProjects: ProjectItem[] = [
-  // หากมีโปรเจกต์อื่นๆ เพิ่มเติมสามารถใส่เพิ่มในส่วนนี้ได้ครับ
+export const certificates: CertificateItem[] = [
   {
-    title: "Smart Farm IoT",
+    title: "NAT Olympic Applied Math Camp 2023 – Candidate Selection",
+    issuer: "Office of National Academic Test Program (NAT)",
+    period: "Oct 2023",
     description:
-      "An automated agricultural monitoring system that integrates hardware sensors with a real-time cloud database.",
-    tech: ["ESP32", "Firebase", "IoT"],
-    github: "https://github.com/MooncakeXI",
+      "Selected as a candidate representative through the qualifying exam for the Applied Mathematics track.",
   },
   {
-    title: "DC Clearance Web App",
+    title: "สอวน. Computer Camp 2, Academic Year 2021",
+    issuer: "Walailak University – POSN Computer Olympiad Center",
+    period: "Apr 2022",
+    description: "Completed Computer Olympiad training camp 2.",
+  },
+  {
+    title: "สอวน. Computer Camp 2, Academic Year 2022",
+    issuer: "Walailak University – POSN Computer Olympiad Center",
+    period: "Apr 2023",
+    description: "Completed Computer Olympiad training camp 2.",
+  },
+  {
+    title: "SMTE Open House 2023 – 2nd Runner-up (Gold)",
+    issuer: "SMTE School Network, hosted at Satree Phuket School",
+    period: "Aug 2023",
     description:
-      "A corporate internal tool for managing and browsing discounted inventory with optimized database queries.",
-    tech: ["React", "Node.js", "MySQL"],
-    github: "https://github.com/MooncakeXI",
+      "2nd runner-up, poster project presentation, Computer category, at the 13th SMTE innovation fair.",
+  },
+  {
+    title: "SMTE Open House 2023 – 1st Runner-up (Silver)",
+    issuer: "SMTE School Network, hosted at Satree Phuket School",
+    period: "Aug 2023",
+    description:
+      "1st runner-up, Computer Genius quiz competition, at the 13th SMTE innovation fair.",
+  },
+  {
+    title: "MakeX Robotics Competition – 2nd Runner-up",
+    issuer:
+      "MakeX Challenge, Asian Intercontinental Tournament (Energy Innovator)",
+    period: "Jul 2023",
+    description: "2nd runner-up with Team Hoperation, competing for Thailand.",
   },
 ];

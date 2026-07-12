@@ -2,6 +2,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useRef, useCallback } from "react";
 import { SectionHeading } from "./section-heading";
 import { personalInfo, skills } from "@/data/portfolio";
+import profileImg from "@/assets/profile.jpg";
 
 function TiltAvatar() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -31,16 +32,11 @@ function TiltAvatar() {
     >
       <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border-2 border-primary/30 transition-all duration-300 group-hover:-bottom-2 group-hover:-right-2" />
       <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-        <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-primary/5 to-primary/15">
-          <div className="text-center">
-            <div className="mb-3 text-6xl font-bold text-primary">
-              {personalInfo.avatarInitials}
-            </div>
-            <p className="font-mono text-xs text-muted-foreground">
-              {personalInfo.title}
-            </p>
-          </div>
-        </div>
+        <img
+          src={profileImg}
+          alt={personalInfo.name}
+          className="aspect-square w-full object-cover"
+        />
       </div>
     </div>
   );
