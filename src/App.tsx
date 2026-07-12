@@ -8,11 +8,13 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "./components/Footer";
 // import { CursorFollower } from "./components/Cursor-follower"; // ปิดชั่วคราว ใช้ MouseGlow แทน
 import { MouseGlow } from "./components/MouseGlow";
+import { BlobGlow } from "./components/BlobGlow";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen font-sans text-foreground">
       {/* ใส่ Navbar ไว้บนสุด */}
+      <BlobGlow />
       <MouseGlow />
       {/* <CursorFollower /> */}
       <Navbar />

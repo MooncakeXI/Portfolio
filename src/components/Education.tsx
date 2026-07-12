@@ -7,13 +7,7 @@ export function Education() {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section
-      id="education"
-      className="px-6 py-28 bg-background relative overflow-hidden"
-    >
-      {/* Background soft glowing orb */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-primary/[0.03] blur-[100px]" />
-
+    <section id="education" className="px-6 py-28">
       <div className="mx-auto max-w-5xl">
         <SectionHeading index="02" title="Education" />
 
@@ -33,8 +27,8 @@ export function Education() {
 
               {/* Card Container */}
               <div className="glow-surface relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20">
-                {/* Subtle top primary gradient border on card hover */}
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/40 via-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Top primary gradient accent, brightens on hover */}
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary/40 via-primary to-transparent opacity-40 transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                   <div>

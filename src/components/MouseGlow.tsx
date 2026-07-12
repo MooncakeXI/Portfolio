@@ -33,9 +33,9 @@ export function MouseGlow() {
   }, []);
 
   return (
-    <div
-      className="mouse-glow-bg pointer-events-none fixed inset-0 z-[-1] opacity-0 transition-opacity duration-500"
-      aria-hidden="true"
-    />
+    <div className="pointer-events-none fixed inset-0" aria-hidden="true">
+      <div className="dot-grid-base" />
+      <div className="dot-grid-accent" />
+    </div>
   );
 }
