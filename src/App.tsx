@@ -11,7 +11,7 @@ import { MouseGlow } from "./components/MouseGlow";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground">
+    <div className="min-h-screen font-sans text-foreground">
       {/* ใส่ Navbar ไว้บนสุด */}
       <MouseGlow />
       {/* <CursorFollower /> */}

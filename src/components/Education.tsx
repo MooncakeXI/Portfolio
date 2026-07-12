@@ -7,13 +7,7 @@ export function Education() {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section
-      id="education"
-      className="px-6 py-28 bg-background relative overflow-hidden"
-    >
-      {/* Background soft glowing orb */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[450px] rounded-full bg-primary/[0.03] blur-[100px]" />
-
+    <section id="education" className="px-6 py-28">
       <div className="mx-auto max-w-5xl">
         <SectionHeading index="02" title="Education" />
 

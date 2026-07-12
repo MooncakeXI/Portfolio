@@ -113,15 +113,6 @@ export function Hero() {
         }}
       />
 
-      {/* Dot grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.15]"
-        style={{
-          backgroundImage: `radial-gradient(oklch(0.52 0.14 175) 1px, transparent 1px)`,
-          backgroundSize: "32px 32px",
-        }}
-      />
-
       <div className="relative mx-auto max-w-5xl">
         {/* Staggered entrance */}
         <div

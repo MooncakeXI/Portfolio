@@ -34,8 +34,8 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 175 65% 55%;
+    --primary-foreground: 240 10% 3.9%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
@@ -70,20 +70,50 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-zinc-500;
 }
 
-/* Global mouse-glow: ambient background + per-component reactive surfaces */
+/* Global mouse tracking: shared position for the dot-grid and per-component surfaces */
 :root {
   --mx: 50%;
   --my: 50%;
+  --dot-base-color: rgba(0, 0, 0, 0.12);
+  --dot-accent-color: oklch(0.52 0.14 175);
+}
+.dark {
+  --dot-base-color: rgba(255, 255, 255, 0.14);
+  --dot-accent-color: oklch(0.75 0.14 175);
 }
 
-.mouse-glow-bg {
-  background: radial-gradient(
-    600px circle at var(--mx) var(--my),
-    oklch(0.52 0.14 175 / 0.1),
-    transparent 70%
+.dot-grid-base {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: radial-gradient(var(--dot-base-color) 1.5px, transparent 0);
+  background-size: 30px 30px;
+}
+.dot-grid-accent {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: radial-gradient(
+    var(--dot-accent-color) 1.5px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  -webkit-mask-image: radial-gradient(
+    circle 220px at var(--mx) var(--my),
+    black 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 220px at var(--mx) var(--my),
+    black 0%,
+    transparent 100%
   );
 }
-html.mouse-glow-active .mouse-glow-bg {
+html.mouse-glow-active .dot-grid-accent {
   opacity: 1;
 }
 
