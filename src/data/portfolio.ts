@@ -51,7 +51,7 @@ export const personalInfo = {
     "problem solver.",
   ],
   bioShort:
-    "Proactive Computer Engineering student with hands-on experience in full-stack web development, building document-processing pipelines, and designing scalable APIs.",
+    "Proactive Computer Engineering student with hands-on experience in full-stack web development and a strong interest in AI-powered systems.",
   aboutParagraphs: [
     "Hello! I'm Suvijak, a Computer Engineering and Digital Technology student at Chulalongkorn University. I have a strong problem-solving mindset and a passion for learning modern technologies, cloud platforms, and AI integrations to deliver impactful software solutions.",
     "Recently, I worked as a Software Engineer at PorTCAS where I built document-processing pipelines using the Gemini API. Prior to that, I interned at Index Living Mall developing full-stack web applications for large-scale clearance events.",
@@ -78,14 +78,21 @@ export const personalInfo = {
 };
 
 export const skills: Skill[] = [
-  { name: "TypeScript (Node.js)" },
   { name: "Python" },
-  { name: "SQL" },
+  { name: "TypeScript" },
+  { name: "JavaScript" },
   { name: "React" },
+  { name: "Node.js" },
   { name: "Express.js" },
-  { name: "Prompt Engineering" },
-  { name: "ML Pipelines (Airflow)" },
-  { name: "Docker & Firebase" },
+  { name: "REST API Design" },
+  { name: "SQL" },
+  { name: "PostgreSQL" },
+  { name: "MongoDB" },
+  { name: "Machine Learning" },
+  { name: "Firebase" },
+  { name: "Docker" },
+  { name: "Postman" },
+  { name: "Git" },
 ];
 
 export const education: EducationItem[] = [
