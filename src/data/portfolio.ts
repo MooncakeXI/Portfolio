@@ -60,7 +60,6 @@ export const personalInfo = {
     "Hello! I'm Suvijak, a Computer Engineering and Digital Technology student at Chulalongkorn University. I have a strong problem-solving mindset and a passion for learning modern technologies, cloud platforms, and AI integrations to deliver impactful software solutions.",
     "Recently, I worked as a Software Engineer at PorTCAS where I built document-processing pipelines using the Gemini API. Prior to that, I interned at Index Living Mall developing full-stack web applications for large-scale clearance events.",
   ],
-  avatarInitials: "SP",
   email: "6733280721@student.chula.ac.th",
   socialLinks: [
     {
