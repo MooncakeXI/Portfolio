@@ -33,6 +33,13 @@ export interface ProjectItem {
   color?: string; // Optional gradient classes for featured visuals
 }
 
+export interface CertificateItem {
+  title: string;
+  issuer: string;
+  period: string;
+  description?: string;
+}
+
 export const personalInfo = {
   name: "Suvijak Phuphakdeepan",
   logoText: "<dev />",
@@ -170,20 +177,45 @@ export const featuredProjects: ProjectItem[] = [
   },
 ];
 
-export const otherProjects: ProjectItem[] = [
-  // หากมีโปรเจกต์อื่นๆ เพิ่มเติมสามารถใส่เพิ่มในส่วนนี้ได้ครับ
+export const certificates: CertificateItem[] = [
   {
-    title: "Smart Farm IoT",
+    title: "NAT Olympic Applied Math Camp 2023 – Candidate Selection",
+    issuer: "Office of National Academic Test Program (NAT)",
+    period: "Oct 2023",
     description:
-      "An automated agricultural monitoring system that integrates hardware sensors with a real-time cloud database.",
-    tech: ["ESP32", "Firebase", "IoT"],
-    github: "https://github.com/MooncakeXI",
+      "Selected as a candidate representative through the qualifying exam for the Applied Mathematics track.",
   },
   {
-    title: "DC Clearance Web App",
+    title: "สอวน. Computer Camp 2, Academic Year 2021",
+    issuer: "Walailak University – POSN Computer Olympiad Center",
+    period: "Apr 2022",
+    description: "Completed Computer Olympiad training camp 2.",
+  },
+  {
+    title: "สอวน. Computer Camp 2, Academic Year 2022",
+    issuer: "Walailak University – POSN Computer Olympiad Center",
+    period: "Apr 2023",
+    description: "Completed Computer Olympiad training camp 2.",
+  },
+  {
+    title: "SMTE Open House 2023 – 2nd Runner-up (Gold)",
+    issuer: "SMTE School Network, hosted at Satree Phuket School",
+    period: "Aug 2023",
     description:
-      "A corporate internal tool for managing and browsing discounted inventory with optimized database queries.",
-    tech: ["React", "Node.js", "MySQL"],
-    github: "https://github.com/MooncakeXI",
+      "2nd runner-up, poster project presentation, Computer category, at the 13th SMTE innovation fair.",
+  },
+  {
+    title: "SMTE Open House 2023 – 1st Runner-up (Silver)",
+    issuer: "SMTE School Network, hosted at Satree Phuket School",
+    period: "Aug 2023",
+    description:
+      "1st runner-up, Computer Genius quiz competition, at the 13th SMTE innovation fair.",
+  },
+  {
+    title: "MakeX Robotics Competition – 2nd Runner-up",
+    issuer:
+      "MakeX Challenge, Asian Intercontinental Tournament (Energy Innovator)",
+    period: "Jul 2023",
+    description: "2nd runner-up with Team Hoperation, competing for Thailand.",
   },
 ];

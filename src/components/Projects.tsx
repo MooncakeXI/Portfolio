@@ -1,63 +1,32 @@
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { ExternalLink, Github, Award } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { SectionHeading } from "./section-heading";
-import { featuredProjects, otherProjects } from "@/data/portfolio";
+import { featuredProjects, certificates } from "@/data/portfolio";
 
-function ProjectCard({
-  project,
+function CertificateCard({
+  certificate,
   index,
 }: {
-  project: (typeof otherProjects)[0];
+  certificate: (typeof certificates)[0];
   index: number;
 }) {
   return (
     <div
       className={`reveal reveal-delay-${index + 1} glow-surface group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-primary/20`}
     >
-
       <div className="relative">
-        <div className="mb-6 flex items-center justify-between">
-          <Folder className="h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]" />
-          <div className="flex items-center gap-3">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${project.title} GitHub`}
-                data-magnetic
-                className="text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
-              >
-                <Github className="h-4 w-4" />
-              </a>
-            )}
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${project.title} Live`}
-                data-magnetic
-                className="text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
-              >
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            )}
-          </div>
-        </div>
-        <h4 className="mb-2 font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">
-          {project.title}
+        <Award className="mb-6 h-10 w-10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-5deg]" />
+        <h4 className="mb-1 font-semibold text-foreground transition-colors duration-300 group-hover:text-primary">
+          {certificate.title}
         </h4>
-        <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-          {project.description}
+        <p className="mb-3 font-mono text-xs text-primary">
+          {certificate.issuer} · {certificate.period}
         </p>
-        <ul className="flex flex-wrap gap-2 font-mono text-[10px] text-muted-foreground">
-          {project.tech.map((t) => (
-            <li key={t} className="rounded-full bg-secondary px-2.5 py-1">
-              {t}
-            </li>
-          ))}
-        </ul>
+        {certificate.description && (
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {certificate.description}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -157,16 +126,16 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Other projects */}
+        {/* Other certificates */}
         <div ref={otherRef} className="mt-28">
           <h3 className="reveal mb-10 text-center text-xl font-bold text-foreground">
-            Other Noteworthy Projects
+            Other Certificates
           </h3>
           <div className="grid gap-5 md:grid-cols-3">
-            {otherProjects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
+            {certificates.map((certificate, index) => (
+              <CertificateCard
+                key={certificate.title}
+                certificate={certificate}
                 index={index}
               />
             ))}
