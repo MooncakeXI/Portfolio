@@ -26,3 +26,5 @@ eslint_report_utf8.txt
 *.njsproj
 *.sln
 *.sw?
+
+/docs
