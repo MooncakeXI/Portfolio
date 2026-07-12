@@ -48,12 +48,7 @@ export const personalInfo = {
   name: "Suvijak Phuphakdeepan",
   logoText: "<dev />",
   title: "Software Engineer",
-  roles: [
-    "software engineer.",
-    "full-stack developer.",
-    "data pipeline builder.",
-    "problem solver.",
-  ],
+  roles: ["software engineer.", "full-stack developer.", "problem solver."],
   bioShort:
     "Proactive Computer Engineering student with hands-on experience in full-stack web development and a strong interest in AI-powered systems.",
   aboutParagraphs: [
