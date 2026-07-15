@@ -1,5 +1,5 @@
-import condoMlPipelineImg from "@/assets/condo-ml-pipeline.png";
-import smartFarmIotImg from "@/assets/smart-farm-iot.png";
+import condoMlPipelineImg from "@/assets/condo-ml-pipeline.webp";
+import smartFarmIotImg from "@/assets/smart-farm-iot.webp";
 
 export interface SocialLink {
   label: string;
