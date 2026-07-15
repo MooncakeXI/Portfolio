@@ -47,7 +47,7 @@ export function Experience() {
                 role="tab"
                 aria-selected={activeTab === i}
                 aria-controls={`panel-${i}`}
-                className={`relative z-10 whitespace-nowrap px-5 py-3 text-left font-mono text-sm transition-all duration-300 ${
+                className={`relative z-10 whitespace-nowrap rounded-full px-5 py-3 text-left font-mono text-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   activeTab === i
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
@@ -94,7 +94,7 @@ export function Experience() {
                 <p className="mb-2 mt-6 font-mono text-xs text-muted-foreground">
                   Skills I learned:
                 </p>
-                <ul className="flex flex-wrap gap-2 font-mono text-[10px] text-muted-foreground">
+                <ul className="flex flex-wrap gap-2 font-mono text-xs text-muted-foreground">
                   {exp.skillsLearned.map((skill) => (
                     <li key={skill} className="rounded-full bg-secondary px-2.5 py-1">
                       {skill}

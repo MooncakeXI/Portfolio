@@ -1,10 +1,10 @@
-import condoMlPipelineImg from "@/assets/condo-ml-pipeline.png";
-import smartFarmIotImg from "@/assets/smart-farm-iot.png";
+import condoMlPipelineImg from "@/assets/condo-ml-pipeline.webp";
+import smartFarmIotImg from "@/assets/smart-farm-iot.webp";
 
 export interface SocialLink {
   label: string;
   href: string;
-  platform: "github" | "linkedin" | "twitter" | "email" | "external";
+  platform: "github" | "linkedin" | "email";
 }
 
 export interface Skill {
@@ -33,8 +33,7 @@ export interface ProjectItem {
   tech: string[];
   github?: string;
   live?: string;
-  color?: string; // Optional gradient classes for featured visuals
-  image?: string;
+  image: string;
 }
 
 export interface CertificateItem {
@@ -164,7 +163,6 @@ export const featuredProjects: ProjectItem[] = [
     tech: ["Python", "Airflow", "Machine Learning", "Data Visualization"],
     github: "https://github.com/ApiwitJoey/DSDE_SING_WATER_2025",
     live: "",
-    color: "from-primary/5 to-primary/15",
     image: condoMlPipelineImg,
   },
   {
@@ -178,7 +176,6 @@ export const featuredProjects: ProjectItem[] = [
       "System Integration",
     ],
     live: "",
-    color: "from-primary/10 to-transparent",
     image: smartFarmIotImg,
   },
 ];

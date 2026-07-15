@@ -24,8 +24,7 @@ export function ThemeToggle() {
       type="button"
       onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
       aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-      data-magnetic
-      className="rounded-full p-2 text-muted-foreground transition-colors duration-300 hover:bg-primary/10 hover:text-primary"
+      className="-m-1.5 rounded-full p-3.5 text-muted-foreground transition-colors duration-300 hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       {theme === "dark" ? (
         <Sun className="h-4 w-4" />

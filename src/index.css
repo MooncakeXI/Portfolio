@@ -9,21 +9,13 @@
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 175 77% 33%;
+    --primary: 175 77% 28%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
     --radius: 0.625rem;
   }
 
@@ -32,21 +24,13 @@
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
     --primary: 175 65% 55%;
     --primary-foreground: 240 10% 3.9%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -65,9 +49,30 @@
   }
 }
 
-/* คลาสเพิ่มเติมสำหรับ Hero และ Navbar */
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-zinc-500;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.5;
+  }
+}
+.animate-scroll-hint {
+  animation: scroll-hint 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 /* Global mouse tracking: shared position for the dot-grid and per-component surfaces */
@@ -202,6 +207,38 @@ html.mouse-glow-active .dot-grid-accent {
   }
 }
 
+/* Offset ring frame for the featured-project screenshot */
+.project-frame {
+  position: relative;
+  border-radius: 1.75rem;
+}
+.project-frame::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border: 2px solid hsl(var(--primary) / 0.4);
+  border-radius: inherit;
+  pointer-events: none;
+  transition:
+    inset 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+.project-frame:hover::before {
+  inset: -14px;
+  border-color: hsl(var(--primary) / 0.7);
+}
+.project-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-frame:hover img {
+  transform: scale(1.03);
+}
+
 .glow-surface {
   position: relative;
   overflow: hidden;
@@ -215,7 +252,7 @@ html.mouse-glow-active .dot-grid-accent {
   opacity: 0;
   background: radial-gradient(
     900px circle at var(--lx, 50%) var(--ly, 50%),
-    oklch(0.52 0.14 175 / 0.16),
+    color-mix(in oklch, var(--dot-accent-color) 16%, transparent),
     transparent 70%
   );
   transition: opacity 0.3s ease;

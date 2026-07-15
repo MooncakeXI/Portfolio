@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-15T00:00:00.000Z",
+  "title": "Design System: The Terminal Aurora",
+  "extensions": {
+    "colorMeta": {
+      "signal-teal": {
+        "role": "primary",
+        "displayName": "Signal Teal",
+        "canonical": "hsl(175 77% 28%)",
+        "tonalRamp": ["#021A17", "#04352F", "#075147", "#0A6C60", "#107E75", "#33AA9E", "#75C7BD", "#C0E6E1"]
+      },
+      "signal-teal-dark": {
+        "role": "primary",
+        "displayName": "Signal Teal Dark",
+        "canonical": "hsl(175 65% 55%)",
+        "tonalRamp": ["#062E29", "#0C5C52", "#128A7B", "#22AC9C", "#42D7CA", "#71E0D6", "#A1EAE2", "#D0F5F0"]
+      },
+      "aurora-teal": {
+        "role": "accent",
+        "displayName": "Aurora Teal",
+        "canonical": "oklch(0.52 0.14 175)",
+        "tonalRamp": ["#02201D", "#05413A", "#09615A", "#0C8277", "#0E9488", "#39ACA0", "#79C7BC", "#C2E6E0"]
+      },
+      "warm-ivory": {
+        "role": "neutral",
+        "displayName": "Warm Ivory",
+        "canonical": "hsl(40 33% 97%)",
+        "tonalRamp": ["#2B2621", "#4A4339", "#6B6255", "#8C8070", "#B3A996", "#D6CFC2", "#EDE8E0", "#FAF8F5"]
+      },
+      "pure-white": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "hsl(0 0% 100%)",
+        "tonalRamp": ["#1A1A1A", "#404040", "#666666", "#8C8C8C", "#B3B3B3", "#D9D9D9", "#F0F0F0", "#FFFFFF"]
+      },
+      "midnight-zinc": {
+        "role": "neutral",
+        "displayName": "Midnight Zinc",
+        "canonical": "hsl(240 10% 3.9%)",
+        "tonalRamp": ["#000000", "#0A0A0C", "#151517", "#232326", "#3F3F46", "#71717A", "#A1A1AA", "#D4D4D8"]
+      },
+      "zinc-gray": {
+        "role": "neutral",
+        "displayName": "Zinc Gray",
+        "canonical": "hsl(240 3.8% 46.1%)",
+        "tonalRamp": ["#18181B", "#27272A", "#3F3F46", "#52525B", "#71717A", "#A1A1AA", "#D4D4D8", "#F4F4F5"]
+      },
+      "hairline-gray": {
+        "role": "neutral",
+        "displayName": "Hairline Gray",
+        "canonical": "hsl(240 5.9% 90%)",
+        "tonalRamp": ["#27272A", "#3F3F46", "#71717A", "#A1A1AA", "#D4D4D8", "#E4E4E7", "#F4F4F5", "#FAFAFA"]
+      },
+      "secondary-fill": {
+        "role": "neutral",
+        "displayName": "Secondary Fill",
+        "canonical": "hsl(240 4.8% 95.9%)",
+        "tonalRamp": ["#27272A", "#3F3F46", "#71717A", "#A1A1AA", "#D4D4D8", "#E4E4E7", "#F4F4F5", "#FAFAFA"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only. Caps at 6rem (lg:text-8xl)." },
+      "headline": { "displayName": "Headline", "purpose": "Hero animated role line." },
+      "title": { "displayName": "Title", "purpose": "Section headings, paired with mono index number." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy — bio, descriptions, bullets." },
+      "label": { "displayName": "Label / Mono", "purpose": "Dates, tech chips, nav index numbers, logo, footer credit." }
+    },
+    "shadows": [
+      { "name": "resting-card", "value": "0 1px 2px rgba(0,0,0,0.05)", "purpose": "Default card shadow at rest (Tailwind shadow-sm)." },
+      { "name": "hover-lift", "value": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)", "purpose": "Card hover state (Tailwind shadow-lg), paired with a small -translate-y lift." },
+      { "name": "showcase-hover", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "Featured Projects media card hover only (Tailwind shadow-2xl)." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default Tailwind transition easing for hover/color/shadow state changes." },
+      { "name": "aurora-drift", "value": "150s linear infinite", "purpose": "Blob-glow background-position wander loop." },
+      { "name": "dot-accent-fade", "value": "0.3s ease", "purpose": "Cursor-revealed teal dot-grid layer opacity transition." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill CTA with a solid-color wipe that slides in from the left on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-btn-primary-fill\"></span><span class=\"ds-btn-primary-label\">Get In Touch</span></a>",
+      "css": ".ds-btn-primary { position: relative; display: inline-flex; align-items: center; gap: 8px; overflow: hidden; border-radius: 9999px; border: 1px solid hsl(var(--primary)); padding: 12px 28px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; color: hsl(var(--primary)); text-decoration: none; transition: color 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary-fill { position: absolute; inset: 0; background: hsl(var(--primary)); transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary-label { position: relative; } .ds-btn-primary:hover { color: hsl(var(--primary-foreground)); } .ds-btn-primary:hover .ds-btn-primary-fill { transform: translateX(0); } .ds-btn-primary:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "Mono index + label pill; active state is a scroll-spy-driven tinted fill.",
+      "html": "<div class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\"><span class=\"ds-nav-link-index\">01.</span>About</a><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\"><span class=\"ds-nav-link-index\">02.</span>Education</a></div>",
+      "css": ".ds-nav { display: flex; gap: 4px; font-family: ui-sans-serif, system-ui, sans-serif; } .ds-nav-link { display: inline-flex; align-items: center; border-radius: 9999px; padding: 8px 16px; font-size: 14px; color: hsl(var(--muted-foreground)); text-decoration: none; transition: color 0.3s cubic-bezier(0.4,0,0.2,1), background-color 0.3s cubic-bezier(0.4,0,0.2,1); } .ds-nav-link:hover { color: hsl(var(--foreground)); } .ds-nav-link--active { color: hsl(var(--primary)); background-color: hsl(var(--primary) / 0.08); } .ds-nav-link-index { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: hsl(var(--primary)); margin-right: 4px; }"
+    },
+    {
+      "name": "Standard Card",
+      "kind": "card",
+      "refersTo": "card-standard",
+      "description": "Bordered card with a faint top accent bar that brightens on hover. Used for Education timeline entries.",
+      "html": "<div class=\"ds-card-standard\"><div class=\"ds-card-standard-accent\"></div><h3 class=\"ds-card-standard-title\">Bachelor of Engineering</h3><p class=\"ds-card-standard-body\">Computer Engineering and Digital Technology</p></div>",
+      "css": ".ds-card-standard { position: relative; overflow: hidden; border-radius: 16px; border: 1px solid hsl(var(--border)); background-color: hsl(var(--card)); padding: 24px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-standard-accent { position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(to right, hsl(var(--primary) / 0.4), hsl(var(--primary)), transparent); opacity: 0.4; transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-standard-title { font-size: 20px; font-weight: 700; color: hsl(var(--foreground)); margin-bottom: 8px; } .ds-card-standard-body { font-size: 14px; color: hsl(var(--muted-foreground)); } .ds-card-standard:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: hsl(var(--primary) / 0.2); } .ds-card-standard:hover .ds-card-standard-accent { opacity: 1; }"
+    },
+    {
+      "name": "Media Card",
+      "kind": "card",
+      "refersTo": "card-media",
+      "description": "Borderless, shadow-only card reserved for the Featured Projects screenshot.",
+      "html": "<div class=\"ds-card-media\"><img class=\"ds-card-media-img\" src=\"\" alt=\"Project screenshot\" /></div>",
+      "css": ".ds-card-media { overflow: hidden; border-radius: 28px; background-color: hsl(var(--card)); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); transition: box-shadow 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-media-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-media:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); } .ds-card-media:hover .ds-card-media-img { transform: scale(1.05); }"
+    },
+    {
+      "name": "Certificate Card",
+      "kind": "card",
+      "refersTo": "card-certificate",
+      "description": "Compact card with a circular tinted icon badge, denser than the standard card.",
+      "html": "<div class=\"ds-card-cert\"><div class=\"ds-card-cert-badge\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"8\" r=\"6\"/><path d=\"M8.5 13.5 7 22l5-3 5 3-1.5-8.5\"/></svg></div><h4 class=\"ds-card-cert-title\">NAT Olympic Applied Math Camp 2023</h4><p class=\"ds-card-cert-meta\">Office of National Academic Test Program · Oct 2023</p></div>",
+      "css": ".ds-card-cert { border-radius: 10px; border: 1px solid hsl(var(--border) / 0.6); background-color: hsl(var(--card)); padding: 24px; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.5s cubic-bezier(0.4,0,0.2,1); } .ds-card-cert-badge { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 9999px; background-color: hsl(var(--primary) / 0.1); color: hsl(var(--primary)); margin-bottom: 24px; } .ds-card-cert-title { font-size: 16px; font-weight: 600; color: hsl(var(--foreground)); margin-bottom: 4px; } .ds-card-cert-meta { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: hsl(var(--primary)); } .ds-card-cert:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: hsl(var(--primary) / 0.3); }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tech-stack / skill tag pill.",
+      "html": "<span class=\"ds-chip\">TypeScript</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; border-radius: 9999px; background-color: hsl(var(--secondary)); padding: 4px 10px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; color: hsl(var(--muted-foreground)); }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "The literal, functional 01–05 index paired with a title and trailing hairline rule.",
+      "html": "<div class=\"ds-section-heading\"><span class=\"ds-section-heading-index\">02.</span><h2 class=\"ds-section-heading-title\">Education</h2><div class=\"ds-section-heading-rule\"></div></div>",
+      "css": ".ds-section-heading { display: flex; align-items: center; gap: 12px; } .ds-section-heading-index { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; color: hsl(var(--primary)); } .ds-section-heading-title { font-size: 24px; font-weight: 700; color: hsl(var(--foreground)); } .ds-section-heading-rule { flex: 1; height: 1px; background-color: hsl(var(--border)); margin-left: 16px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Terminal Aurora",
+    "overview": "Two layers, always working together. The base layer is a developer's terminal: monospace labels, a literal 01-05 index that cross-references the nav bar section by section, a <dev /> logotype, flat cards with hairline borders. The second layer is an aurora that lives behind and reacts to the visitor — a mouse-reactive dot-grid, a slow-wandering blob glow, and per-card proximity lighting, all rendered in one consistent teal. Neither layer performs alone: the terminal without the aurora is a dry resume; the aurora without the terminal is a tech demo with no substance behind it. Together they say \"I build interactive frontend, and this page is the proof,\" aimed squarely at a recruiter doing a 30-second scan. The palette is deliberately restrained — a warm-ivory neutral base (chosen over a colder pure white specifically for warmth without sacrificing the technical read) and one teal accent, never more than one saturated color live on screen at once. The playful interactivity (glow, magnetic hover, the typewriter role line) is the flex; it never gets in the way of the actual content a recruiter needs to read. This system explicitly rejects the SaaS-landing-page toolkit: no gradient text as decoration, no colored side-stripe borders on cards, no identical card grid used for genuinely different content types, no rainbow/neon color cycling.",
+    "keyCharacteristics": [
+      "One teal, two representations: Signal Teal for interactive UI, Aurora Teal for ambient effects.",
+      "A literal, functional numbered index (01-05) — not decorative eyebrows.",
+      "Elevation is a hover response, not baseline depth.",
+      "Card surfaces are deliberately varied by section so the page doesn't read as one repeated template.",
+      "Monospace exclusively for metadata — never for body prose."
+    ],
+    "rules": [
+      { "name": "The One Teal Rule", "body": "Exactly one saturated hue exists in this system. If a new accent color is needed for anything, reach for a tint/shade of teal before introducing a second hue.", "section": "colors" },
+      { "name": "The Warmth-Isn't-Cream Rule", "body": "Warm Ivory is a background tone that exists specifically because Pure White cards sit on top of it. Don't let the warm neutral migrate onto cards or surfaces.", "section": "colors" },
+      { "name": "The Mono-Never-Prose Rule", "body": "Monospace is reserved for metadata. It never carries a sentence of body copy.", "section": "typography" },
+      { "name": "The Touch-to-Lift Rule", "body": "No card gets a resting shadow heavier than shadow-sm. If something needs to look important at rest, use size or position, not elevation.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep exactly one saturated hue (teal) in the system.",
+      "Do vary card surface treatment by content type rather than reusing one card shape everywhere.",
+      "Do reserve monospace for metadata only.",
+      "Do treat the 01-05 section numbers as a literal index synced to the Navbar.",
+      "Do keep elevation state-driven."
+    ],
+    "donts": [
+      "Don't use gradient text (background-clip: text + gradient background) — known current exception in the Hero role line that should be fixed on a future pass.",
+      "Don't use a colored side-stripe border on cards — tried and reverted during development.",
+      "Don't reuse one identical card grid for genuinely different content.",
+      "Don't introduce a second saturated hue or a rainbow/neon color-cycling effect.",
+      "Don't let the warm-ivory background bleed onto card surfaces."
+    ]
+  }
+}

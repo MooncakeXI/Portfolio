@@ -55,22 +55,15 @@ export function Projects() {
             >
               {/* Project visual */}
               <div className="flex-1">
-                <div className="glow-surface relative overflow-hidden rounded-[1.75rem] bg-card shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
-                  {project.image ? (
+                <div className="project-frame">
+                  <div className="glow-surface relative overflow-hidden rounded-[1.75rem] bg-card shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
                     />
-                  ) : (
-                    <div
-                      className={`flex aspect-video items-center justify-center bg-gradient-to-br ${project.color || "from-primary/5 to-primary/15"}`}
-                    >
-                      <span className="font-mono text-6xl font-black text-primary/15 transition-all duration-500 group-hover:text-primary/30 group-hover:scale-110">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
 
@@ -88,7 +81,7 @@ export function Projects() {
                   {project.description}
                 </div>
                 <ul
-                  className={`mb-4 flex flex-wrap gap-2 font-mono text-[10px] text-muted-foreground ${
+                  className={`mb-4 flex flex-wrap gap-2 font-mono text-xs text-muted-foreground ${
                     i % 2 !== 0 ? "md:justify-start" : "md:justify-end"
                   }`}
                 >
@@ -112,8 +105,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} GitHub`}
-                      data-magnetic
-                      className="text-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
+                      className="-m-3 rounded-full p-3 text-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     >
                       <Github className="h-5 w-5" />
                     </a>
@@ -124,8 +116,7 @@ export function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title} Live`}
-                      data-magnetic
-                      className="text-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
+                      className="-m-3 rounded-full p-3 text-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                     >
                       <ExternalLink className="h-5 w-5" />
                     </a>
