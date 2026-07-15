@@ -9,7 +9,7 @@
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
-    --primary: 175 77% 33%;
+    --primary: 175 77% 28%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -49,9 +49,30 @@
   }
 }
 
-/* คลาสเพิ่มเติมสำหรับ Hero และ Navbar */
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-zinc-500;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.5;
+  }
+}
+.animate-scroll-hint {
+  animation: scroll-hint 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 /* Global mouse tracking: shared position for the dot-grid and per-component surfaces */

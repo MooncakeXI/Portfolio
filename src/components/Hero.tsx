@@ -1,22 +1,8 @@
-import {
-  ArrowDown,
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { useMagnetic } from "@/hooks/use-magnetic";
 import { personalInfo } from "@/data/portfolio";
-
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  email: Mail,
-  twitter: Twitter,
-  external: ExternalLink,
-};
+import { socialIconMap } from "@/lib/social-icons";
 
 function useTypewriter(
   words: string[],
@@ -38,9 +24,11 @@ function useTypewriter(
     }
 
     if (isDeleting && text === "") {
-      setIsDeleting(false);
-      setWordIndex((prev) => (prev + 1) % words.length);
-      return;
+      const advance = setTimeout(() => {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }, 0);
+      return () => clearTimeout(advance);
     }
 
     const timeout = setTimeout(
@@ -101,12 +89,14 @@ export function Hero() {
     >
       {/* Floating gradient orbs that move with mouse */}
       <div
+        aria-hidden="true"
         className="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-primary/[0.06] blur-[120px] transition-transform duration-700 ease-out"
         style={{
           transform: `translate(${mousePos.x * -1.5}px, ${mousePos.y * -1.5}px)`,
         }}
       />
       <div
+        aria-hidden="true"
         className="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-primary/[0.04] blur-[100px] transition-transform duration-700 ease-out"
         style={{
           transform: `translate(${mousePos.x * 1}px, ${mousePos.y * 1}px)`,
@@ -144,7 +134,7 @@ export function Hero() {
           <h2 className="mb-6 text-2xl font-semibold tracking-tight text-muted-foreground md:text-4xl lg:text-5xl">
             <span className="text-pretty">
               {"I'm a "}
-              <span className="text-gradient">{typedText}</span>
+              <span className="text-primary">{typedText}</span>
               <span className="animate-pulse text-primary">|</span>
             </span>
           </h2>
@@ -173,15 +163,14 @@ export function Hero() {
               onMouseMove={btnMagneticMouseMove}
               onMouseLeave={btnMagneticMouseLeave}
               href="#contact"
-              data-magnetic
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary px-7 py-3 font-mono text-sm text-primary transition-colors duration-300 hover:text-primary-foreground"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary px-7 py-3 font-mono text-sm text-primary transition-colors duration-300 hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-300 group-hover:translate-x-0" />
               <span className="relative">Get In Touch</span>
             </a>
             <div className="flex items-center gap-4">
               {personalInfo.socialLinks.map((link) => {
-                const IconComponent = iconMap[link.platform] || ExternalLink;
+                const IconComponent = socialIconMap[link.platform];
                 return (
                   <a
                     key={link.label}
@@ -195,8 +184,7 @@ export function Hero() {
                         : "noopener noreferrer"
                     }
                     aria-label={link.label}
-                    data-magnetic
-                    className="text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
+                    className="-m-3 rounded-full p-3 text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     <IconComponent className="h-5 w-5" />
                   </a>
@@ -210,17 +198,17 @@ export function Hero() {
       {/* Scroll indicator */}
       <a
         href="#about"
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground transition-all duration-700 hover:text-primary ${
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full p-2 text-muted-foreground transition-all duration-700 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
           visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
         }`}
         style={{ transitionDelay: "800ms" }}
         aria-label="Scroll to about section"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="font-mono text-[10px] uppercase tracking-widest">
+          <span className="font-mono text-xs uppercase tracking-widest">
             Scroll
           </span>
-          <ArrowDown className="h-4 w-4 animate-bounce" />
+          <ArrowDown className="h-4 w-4 animate-scroll-hint" aria-hidden="true" />
         </div>
       </a>
     </section>
