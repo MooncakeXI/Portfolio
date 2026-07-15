@@ -252,7 +252,7 @@ html.mouse-glow-active .dot-grid-accent {
   opacity: 0;
   background: radial-gradient(
     900px circle at var(--lx, 50%) var(--ly, 50%),
-    oklch(0.52 0.14 175 / 0.16),
+    color-mix(in oklch, var(--dot-accent-color) 16%, transparent),
     transparent 70%
   );
   transition: opacity 0.3s ease;

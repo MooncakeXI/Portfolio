@@ -30,8 +30,7 @@ export function Contact() {
             onMouseMove={btnMouseMove}
             onMouseLeave={btnMouseLeave}
             href={`mailto:${personalInfo.email}`}
-            data-magnetic
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary px-10 py-4 font-mono text-sm text-primary transition-colors duration-300 hover:text-primary-foreground"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-primary px-10 py-4 font-mono text-sm text-primary transition-colors duration-300 hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-300 group-hover:translate-x-0" />
             <span className="relative">Say Hello</span>
