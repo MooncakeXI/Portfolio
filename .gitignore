@@ -49,3 +49,6 @@ src/assets/.impeccable/
 .impeccable-live.json
 .impeccable-live/
 node_modules/.impeccable-live/
+
+DESIGN.md
+PRODUCT.md
