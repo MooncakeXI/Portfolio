@@ -119,7 +119,7 @@ export const education: EducationItem[] = [
 export const experiences: ExperienceItem[] = [
   {
     company: "PorTCAS",
-    role: "Software Engineer",
+    role: "Software Product Engineer Intern",
     period: "May 2026 - Jul 2026",
     points: [
       "Prototyped how far Google Drive and Gemini could push the platform past a typical web app, turning the proof-of-concepts that worked into real integrations.",
@@ -136,7 +136,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "Index Living Mall",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer Intern",
     period: "May 2025 - Jul 2025",
     points: [
       "Shipped 'DC Clearance,' a web app built for Index Living Mall's biannual clearance sales, events that draw 60,000-100,000 shoppers through 6,000+ SKUs.",
