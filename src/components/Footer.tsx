@@ -1,13 +1,5 @@
-import { Github, Linkedin, Mail, Twitter, ExternalLink } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-
-const iconMap = {
-  github: Github,
-  linkedin: Linkedin,
-  email: Mail,
-  twitter: Twitter,
-  external: ExternalLink,
-};
+import { socialIconMap } from "@/lib/social-icons";
 
 export function Footer() {
   return (
@@ -15,7 +7,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4">
         <div className="flex items-center gap-5">
           {personalInfo.socialLinks.map((link) => {
-            const IconComponent = iconMap[link.platform] || ExternalLink;
+            const IconComponent = socialIconMap[link.platform];
             return (
               <a
                 key={link.label}
@@ -23,8 +15,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                data-magnetic
-                className="text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5"
+                className="-m-3.5 rounded-full p-3.5 text-muted-foreground transition-all duration-300 hover:text-primary hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <IconComponent className="h-4 w-4" />
               </a>

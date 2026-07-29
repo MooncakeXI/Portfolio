@@ -1,10 +1,10 @@
-import condoMlPipelineImg from "@/assets/condo-ml-pipeline.png";
-import smartFarmIotImg from "@/assets/smart-farm-iot.png";
+import condoMlPipelineImg from "@/assets/condo-ml-pipeline.webp";
+import smartFarmIotImg from "@/assets/smart-farm-iot.webp";
 
 export interface SocialLink {
   label: string;
   href: string;
-  platform: "github" | "linkedin" | "twitter" | "email" | "external";
+  platform: "github" | "linkedin" | "email";
 }
 
 export interface Skill {
@@ -33,8 +33,7 @@ export interface ProjectItem {
   tech: string[];
   github?: string;
   live?: string;
-  color?: string; // Optional gradient classes for featured visuals
-  image?: string;
+  image: string;
 }
 
 export interface CertificateItem {
@@ -120,7 +119,7 @@ export const education: EducationItem[] = [
 export const experiences: ExperienceItem[] = [
   {
     company: "PorTCAS",
-    role: "Software Engineer",
+    role: "Software Product Engineer Intern",
     period: "May 2026 - Jul 2026",
     points: [
       "Prototyped how far Google Drive and Gemini could push the platform past a typical web app, turning the proof-of-concepts that worked into real integrations.",
@@ -137,7 +136,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "Index Living Mall",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer Intern",
     period: "May 2025 - Jul 2025",
     points: [
       "Shipped 'DC Clearance,' a web app built for Index Living Mall's biannual clearance sales, events that draw 60,000-100,000 shoppers through 6,000+ SKUs.",
@@ -164,7 +163,6 @@ export const featuredProjects: ProjectItem[] = [
     tech: ["Python", "Airflow", "Machine Learning", "Data Visualization"],
     github: "https://github.com/ApiwitJoey/DSDE_SING_WATER_2025",
     live: "",
-    color: "from-primary/5 to-primary/15",
     image: condoMlPipelineImg,
   },
   {
@@ -178,7 +176,6 @@ export const featuredProjects: ProjectItem[] = [
       "System Integration",
     ],
     live: "",
-    color: "from-primary/10 to-transparent",
     image: smartFarmIotImg,
   },
 ];

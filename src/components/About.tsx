@@ -36,6 +36,8 @@ function TiltAvatar() {
           src={profileImg}
           alt={personalInfo.name}
           className="aspect-square w-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

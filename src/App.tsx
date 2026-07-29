@@ -6,7 +6,6 @@ import { Projects } from "@/components/Projects";
 import { Experience } from "@/components/Experience";
 import { Contact } from "@/components/Contact";
 import { Footer } from "./components/Footer";
-// import { CursorFollower } from "./components/Cursor-follower"; // ปิดชั่วคราว ใช้ MouseGlow แทน
 import { MouseGlow } from "./components/MouseGlow";
 import { BlobGlow } from "./components/BlobGlow";
 
@@ -16,7 +15,6 @@ export default function App() {
       {/* ใส่ Navbar ไว้บนสุด */}
       <BlobGlow />
       <MouseGlow />
-      {/* <CursorFollower /> */}
       <Navbar />
       <main>
         <Hero />
